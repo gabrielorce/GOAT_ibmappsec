@@ -27,6 +27,10 @@ jobs:
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
 
+
+    - name: Build the project (compile)
+      run: mvn clean verify
+      
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v2
       with:
